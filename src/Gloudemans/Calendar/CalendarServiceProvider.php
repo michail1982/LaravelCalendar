@@ -23,7 +23,7 @@ class CalendarServiceProvider extends ServiceProvider {
 			$request = $app['request'];
 			return new CalendarGenerator($request);
 		});*/
-		$app->singleton('image', function ($app) {
+		$app->singleton('calendar', function ($app) {
 			$request = $app['request'];
 		    	return new CalendarGenerator($request);
 		});
