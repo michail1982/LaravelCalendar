@@ -18,10 +18,14 @@ class CalendarServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['calendar'] = $this->app->share(function($app)
+		/*$this->app['calendar'] = $this->app->share(function($app)
 		{
 			$request = $app['request'];
 			return new CalendarGenerator($request);
+		});*/
+		$app->singleton('image', function ($app) {
+			$request = $app['request'];
+		    	return new CalendarGenerator($request);
 		});
 	}
 
